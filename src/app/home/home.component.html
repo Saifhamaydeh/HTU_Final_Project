@@ -1,0 +1,69 @@
+   
+   <div class="row">
+  <div class="col-md-6">
+  <div class="input-group" id="adv-search">
+    <input type="text" class="form-control" placeholder="Search for Vaccine"[(ngModel)]="searchTerm"/>
+    <div class="input-group-btn">
+        <div class="btn-group" role="group">
+            <div class="dropdown dropdown-lg">
+                <button type="button" class="btn btn-primary dropdown-toggle a" data-toggle="dropdown" aria-expanded="false">filter</button>
+                <div class="dropdown-menu  b" role="menu">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <label for="filter">location</label>
+                        <select class="form-control" [(ngModel)]='filterTerm' name='filterTerm'>
+                            <option value="Amman" selected>Amman</option>
+                            <option value="Irbid">Irbid</option>
+                            <option value="ajlon">ajlon</option>
+                            <option value="aqaba">aqaba</option>
+                            <option value="madaba">madaba</option>
+                        </select>
+                      </div>
+                      <label for="filter">Vaccine</label>
+                        <select class="form-control" name='fiterVaccine'>
+                            <option value="0" selected>Senopharm</option>
+                            <option value="1">Moderna</option>
+                            <option value="2">Pfizer</option>
+                            <option value="3">Johnson</option>
+                            <option value="4">AstraZeneca</option>
+                        </select>
+                        <label for="filter">Dose</label>
+                        <select class="form-control" name='filterDose'> 
+                            <option value="0" selected>1st Dose</option>
+                            <option value="1">2st Dose</option>
+                           
+                        </select>
+                      <button type="submit" name='btn' class="btn btn-primary"(click)='filterCenters()' ><span class="glyphicon glyphicon-search" aria-hidden="true"></span>filter</button>
+                    </form>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary"(click)='searchCenters()'><span class="glyphicon glyphicon-search" aria-hidden="true"></span>search</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="row">
+<div *ngFor="let card of centers">
+   
+<div class="p-4">
+    <div class="card h-100 border-primary">
+        <div class="card-body">
+            <h3 class="card-title">available center</h3>
+            <ul >
+            
+                <li><strong>center name:</strong>  {{card.name}} </li>
+                <li><strong>location:</strong>  {{card.location}}</li>
+                <li><strong>vaccine name:</strong>  {{card.vaccine}}</li>
+                <li><strong>dose:</strong>  {{card.dose}}</li>
+               
+            
+           </ul>
+            
+            <a routerLink='/apointment' [queryParams]="{id:card.id}" class="btn btn-outline-secondary mr-1" (click)="onSelect(card)">add apointmant</a>
+            <a href="#" class="btn btn-outline-secondary">go to map</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>

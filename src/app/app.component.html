@@ -1,0 +1,77 @@
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    
+    <nav id="sidebar" class="sidebar-custom">
+          <div class="sidebar-header">
+          <img src="../assets/img/logo.png" alt="logo" class="img-fluid">
+      </div>
+
+      <ul class="list-unstyled components">
+        <p>Vaccine Center</p>
+      
+        <li>
+            <a href="#" id="Home">Home</a>
+        </li>
+        <li>
+          <a routerLink='/admin' id="Admin">Admin</a>
+      </li>
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">FAQ</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a routerLink='/fqa1' id="fqa1">frequently asked questions</a>
+                </li>
+                <li>
+                    <a routerLink='/fqa2' id="fqa2">official links</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a routerLink='/about'>About</a>
+        </li>
+        <li>
+            <a routerLink='/contact'>Contact</a>
+        </li>
+        <li class="active">
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">charts</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+              
+                <li>
+                  <a routerLink='/chart'>chart 1</a>
+              </li>
+              <li>  <a href="#">chart 2</a>
+              </li>
+              <li>
+                  <a href="#">chart 3</a>
+              </li>
+          </ul>
+      </li>
+    </ul>
+    
+  </nav>
+
+  <!-- Page Content -->
+  <div id="content" class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     
+      <div class="container-fluid">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+         
+      </button>
+      </div>
+  </nav>
+  
+  <div class="line">
+ 
+</div>
+
+<router-outlet></router-outlet>
+
+    </div>
+
+</div> 
+
+
